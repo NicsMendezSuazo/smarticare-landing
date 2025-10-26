@@ -28,7 +28,7 @@ class LandingScreen extends StatelessWidget {
     final isMobile = MediaQuery.of(context).size.width < 800;
     const primaryColor = Color(0xFFFF6B6B);
     final Uri githubApk = Uri.parse(
-      'https://github.com/NicsMendezSuazo/smarticare-landing/releases/download/v.1.0.1Beta/app-arm64-v8a-release.apk',
+      'https://github.com/NicsMendezSuazo/smarticare-landing/releases/download/v1.0.2beta/app-arm64-v8a-release.apk',
     );
 
     return Scaffold(
@@ -80,7 +80,7 @@ class LandingScreen extends StatelessWidget {
                     "SmartiCare is a community-based eye health application developed for "
                     "the Barangay Health Center of Brgy. Poblacion, Sta. Maria, Davao Occidental. "
                     "It uses AI-powered eye scanning to detect and monitor cataracts, "
-                    "track progress, and connect residents with nearby clinics.",
+                    "track progress, and connect residents with listed clinics.",
                     textAlign: isMobile ? TextAlign.center : TextAlign.start,
                     style: GoogleFonts.poppins(
                       fontSize: 18,
@@ -101,8 +101,7 @@ class LandingScreen extends StatelessWidget {
                           text:
                               "👁️ AI-powered cataract detection via eye scan"),
                       FeatureItem(text: "📊 Progress monitoring over time"),
-                      FeatureItem(
-                          text: "🏥 View nearby and partner clinics easily"),
+                      FeatureItem(text: "🏥 View listed clinics easily"),
                       FeatureItem(
                           text: "💾 Secure patient records and scan storage"),
                       FeatureItem(
