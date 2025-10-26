@@ -2,6 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+class SmartiCareLanding extends StatelessWidget {
+  const SmartiCareLanding({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'SmartiCare',
+      theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFF6B6B)),
+        useMaterial3: true,
+      ),
+      home: const LandingScreen(),
+    );
+  }
+}
+
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 
@@ -10,7 +28,7 @@ class LandingScreen extends StatelessWidget {
     final isMobile = MediaQuery.of(context).size.width < 800;
     const primaryColor = Color(0xFFFF6B6B);
     final Uri githubApk = Uri.parse(
-      'https://github.com/NicsMendezSuazo/smarticare-landing/releases/download/v0.9.0-beta/app-release.apk',
+      'https://github.com/NicsMendezSuazo/smarticare-landing/releases/download/v.1.0.1Beta/app-arm64-v8a-release.apk',
     );
 
     return Scaffold(
@@ -26,7 +44,7 @@ class LandingScreen extends StatelessWidget {
                     ? CrossAxisAlignment.center
                     : CrossAxisAlignment.start,
                 children: [
-                  // Header with logo and title
+                  // Header
                   Row(
                     mainAxisAlignment: isMobile
                         ? MainAxisAlignment.center
@@ -57,7 +75,7 @@ class LandingScreen extends StatelessWidget {
 
                   const SizedBox(height: 32),
 
-                  // App description
+                  // Description
                   Text(
                     "SmartiCare is a community-based eye health application developed for "
                     "the Barangay Health Center of Brgy. Poblacion, Sta. Maria, Davao Occidental. "
@@ -78,7 +96,7 @@ class LandingScreen extends StatelessWidget {
                     crossAxisAlignment: isMobile
                         ? CrossAxisAlignment.center
                         : CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       FeatureItem(
                           text:
                               "👁️ AI-powered cataract detection via eye scan"),
@@ -95,56 +113,35 @@ class LandingScreen extends StatelessWidget {
 
                   const SizedBox(height: 50),
 
-                  // Download + Contact buttons
+                  // Buttons
                   Wrap(
                     alignment:
                         isMobile ? WrapAlignment.center : WrapAlignment.start,
                     spacing: 16,
                     runSpacing: 12,
                     children: [
-                      // Glowing Download Button
-                      TweenAnimationBuilder<double>(
-                        duration: const Duration(seconds: 2),
-                        tween: Tween(begin: 0.6, end: 1.0),
-                        curve: Curves.easeInOut,
-                        builder: (context, glow, _) {
-                          return AnimatedContainer(
-                            duration: const Duration(milliseconds: 800),
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: primaryColor.withOpacity(glow / 2),
-                                  blurRadius: 30 * glow,
-                                  spreadRadius: 2 * glow,
-                                ),
-                              ],
-                            ),
-                            child: ElevatedButton.icon(
-                              onPressed: () async {
-                                if (await canLaunchUrl(githubApk)) {
-                                  await launchUrl(githubApk,
-                                      mode: LaunchMode.externalApplication);
-                                }
-                              },
-                              icon: const Icon(Icons.download),
-                              label: const Text(
-                                "Download APK (Android)",
-                                style: TextStyle(fontSize: 16),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: primaryColor,
-                                foregroundColor: Colors.white,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 24, vertical: 16),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                            ),
-                          );
+                      ElevatedButton.icon(
+                        onPressed: () async {
+                          if (await canLaunchUrl(githubApk)) {
+                            await launchUrl(githubApk,
+                                mode: LaunchMode.externalApplication);
+                          }
                         },
+                        icon: const Icon(Icons.download),
+                        label: const Text(
+                          "Download APK (Android)",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: primaryColor,
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24, vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
                       ),
-
                       OutlinedButton(
                         onPressed: () async {
                           final Uri email = Uri(
@@ -178,7 +175,7 @@ class LandingScreen extends StatelessWidget {
 
                   const SizedBox(height: 30),
 
-                  // Footer note
+                  // Footer
                   Text(
                     "Now in public beta — distributed securely via GitHub Releases. "
                     "SmartiCare is currently available for authorized Barangay Health Center staff and testers.",
