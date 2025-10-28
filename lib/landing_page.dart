@@ -28,7 +28,7 @@ class LandingScreen extends StatelessWidget {
     final isMobile = MediaQuery.of(context).size.width < 800;
     const primaryColor = Color(0xFFFF6B6B);
     final Uri githubApk = Uri.parse(
-      'https://github.com/NicsMendezSuazo/smarticare-landing/releases/download/v1.0.2beta/app-arm64-v8a-release.apk',
+      'https://github.com/NicsMendezSuazo/smarticare-landing/releases/download/v1.0.8beta/app-arm64-v8a-release.apk',
     );
 
     return Scaffold(
