@@ -60039,7 +60039,7 @@ A.Do.prototype={
 X(a){var s=null,r=A.arN().$0()
 return new A.rE(B.zQ,"SmartiCare",A.ZR(s,A.aaf(B.L,s,s,B.aL),r,!0),!1,s)}}
 A.AP.prototype={
-X(a){var s,r,q,p=null,o=A.d2(a,p,t.w).w.a.a<800,n=A.hs("https://github.com/NicsMendezSuazo/smarticare-landing/releases/download/v1.0.2beta/app-arm64-v8a-release.apk",0,p),m=o?B.bg:B.b_,l=o?B.oZ:B.b5,k=A.bu(B.c.ai(25.5),B.aL.M()>>>16&255,B.aL.M()>>>8&255,B.aL.M()&255),j=A.yC(16),i=t.nA
+X(a){var s,r,q,p=null,o=A.d2(a,p,t.w).w.a.a<800,n=A.hs("https://github.com/NicsMendezSuazo/smarticare-landing/releases/download/v1.0.8beta/app-arm64-v8a-release.apk",0,p),m=o?B.bg:B.b_,l=o?B.oZ:B.b5,k=A.bu(B.c.ai(25.5),B.aL.M()>>>16&255,B.aL.M()>>>8&255,B.aL.M()&255),j=A.yC(16),i=t.nA
 l=A.a7S(A.d([A.aiN(new A.r6(A.am5(p,p,new A.px("assets/images/icon.png",p,p)),60,p),new A.hL(k,p,p,j,p,p,B.ce),p,p,B.yu,p),B.GR,A.DG("SmartiCare",A.a99().$3$color$fontSize$fontWeight(B.aL,36,B.aM),p)],i),l,B.hi,0)
 k=o?B.dc:B.au
 k=A.DG("SmartiCare is a community-based eye health application developed for the Barangay Health Center of Brgy. Poblacion, Sta. Maria, Davao Occidental. It uses AI-powered eye scanning to detect and monitor cataracts, track progress, and connect residents with listed clinics.",A.a99().$3$color$fontSize$height(B.y,18,1.6),k)
